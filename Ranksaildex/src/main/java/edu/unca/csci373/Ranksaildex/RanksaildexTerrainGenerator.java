@@ -24,7 +24,7 @@ public class RanksaildexTerrainGenerator extends ChunkGenerator {
 		ArrayList<BlockPopulator> populators = new ArrayList<BlockPopulator>();
 		//populators.add(new RanksaildexGrassPopulator());
 		//populators.add(new RanksaildexTreePopulator());
-		populators.add(new RanksaildexWaterPopulator());
+		//populators.add(new RanksaildexWaterPopulator());
 
 		return populators;
 	}
@@ -87,17 +87,17 @@ public class RanksaildexTerrainGenerator extends ChunkGenerator {
 						blocks[this.coordsToInt(x, y, z)] = (byte) Material.DIRT.getId();
 					} else if (y == 6 || y == 7) {
 						if (random.nextInt(100) <= 85) {
-							int block = (random.nextInt(100) <= 85) ? Material.REDSTONE.getId() : Material.DIRT.getId();
+							int block = (random.nextInt(100) <= 85) ? Material.REDSTONE_ORE.getId() : Material.DIRT.getId();
 							blocks[this.coordsToInt(x, y, z)] = (byte) block;
 						}
 					} else if (y == 7 || y == 8) {
 						if (random.nextInt(100) <= 55) {
-							int block = (random.nextInt(100) <= 55) ? Material.REDSTONE.getId() : Material.DIRT.getId();
+							int block = (random.nextInt(100) <= 55) ? Material.REDSTONE_ORE.getId() : Material.DIRT.getId();
 							blocks[this.coordsToInt(x, y, z)] = (byte) block;
 						}
 					} else if (y == 9) {
 						if (random.nextInt(100) <= 35) {
-							int block = (random.nextInt(100) <= 35) ? Material.REDSTONE.getId() : Material.DIRT.getId();
+							int block = (random.nextInt(100) <= 35) ? Material.REDSTONE_ORE.getId() : Material.DIRT.getId();
 							blocks[this.coordsToInt(x, y, z)] = (byte) block;
 						}
 

@@ -18,7 +18,8 @@ public class RanksaildexTreePopulator extends BlockPopulator {
 		for (x = 0; x < 16; ++x){
 			for (z = 0; z < 16; ++z){
 				if (random.nextInt(100) < 5){
-					for (y = 100; chunk.getBlock(x, y, z).getType() == Material.AIR || chunk.getBlock(x, y, z).getType() != Material.WATER; --y);
+					for (y = 100; chunk.getBlock(x, y, z).getType() == Material.AIR && y > 69; --y);
+					
 					
 					TreeType type  = (random.nextInt(100) < 85) ? TreeType.BIRCH : TreeType.TREE;
 					TreeType type2 = (random.nextInt(100) < 25) ? TreeType.REDWOOD : TreeType.TALL_REDWOOD;

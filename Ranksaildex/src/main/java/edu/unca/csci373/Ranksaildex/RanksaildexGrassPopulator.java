@@ -17,44 +17,73 @@ public class RanksaildexGrassPopulator extends BlockPopulator {
 		
 		for (x = 0; x < 16; ++x){
 			for (z = 0; z < 16; ++z){
-				if (random.nextInt(100) < 25){
-					for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR; --y) ;
-						//for(y = 255; chunk.getBlock(x, y, z).getType() == Material.WATER; ++y);
-					
-					block = chunk.getBlock(x, y + 1, z);
-				    block.setType(Material.LONG_GRASS);
-					block.setData((byte)0x1);
-				}
+			if (random.nextInt(100) < 25){
+			for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR && y > 68; --y);
+			if (chunk.getBlock(x, y, z).getType() != Material.WATER && chunk.getBlock(x, y, z).getType() != Material.LONG_GRASS && chunk.getBlock(x, y, z).getType() != Material.LEAVES){
+			//randomize coords
+			block = chunk.getBlock(x, y +1, z);
+			block.setType(Material.LONG_GRASS);
+			block.setData((byte)0x1);
 			}
-		}
-			//for (x = 0; x < 16; ++x){
-				//for (z = 0; z < 16; ++z){
-			//if (random.nextInt(100) < 02){
-				//for (y = 68; chunk.getBlock(x, y, z).getType() == Material.AIR; ++y);
-				//for (y = 255; chunk.getBlock(x, y, z).getType() == Material.WATER; ++y);
-				//randomize coords
-				//block = chunk.getBlock(x, y + 1, z);
-				//block.setType(Material.RED_ROSE);
-				//block.setData((byte)0x1);
-				
-			//}
-				//}
-			//}
+			}
+			}
+			}
+			for (x = 0; x < 16; ++x){
+			for (z = 0; z < 16; ++z){
+			if (random.nextInt(100) < 01){
+			for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR && y > 68; --y);
+			if (chunk.getBlock(x, y, z).getType() != Material.WATER && chunk.getBlock(x, y, z).getType() != Material.LONG_GRASS && chunk.getBlock(x, y, z).getType() != Material.LEAVES){
+			//randomize coords
+			block = chunk.getBlock(x, y +1, z);
+			block.setType(Material.RED_ROSE);
+			block.setData((byte)0x1);
+			}
+			}
+			}
+			}
 			
 			
 			
-			/*for (x = 0; x < 16; ++x){
+			for (x = 0; x < 16; ++x){
 				for (z = 0; z < 16; ++z){
 			if (random.nextInt(100) < 01){
-				for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR; --y);
-				
+				for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR && y > 68; --y);
+				if (chunk.getBlock(x, y, z).getType() != Material.WATER && chunk.getBlock(x, y, z).getType() != Material.LONG_GRASS && chunk.getBlock(x, y, z).getType() != Material.LEAVES){
 				//randomize coords
-				block = chunk.getBlock(x, y + 1, z);
+				block = chunk.getBlock(x, y+1, z);
 				block.setType(Material.YELLOW_FLOWER);
 				block.setData((byte)0x1);
+				}
 			}
 			}
-		}*/
+		}
+			
+			for (x = 0; x < 16; ++x){
+				for (z = 0; z < 16; ++z){
+				if (random.nextInt(100) < 01){
+				for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR && y > 68; --y);
+				if (chunk.getBlock(x, y, z).getType() == Material.WATER){
+				//randomize coords
+				block = chunk.getBlock(x, y +1, z);
+				block.setType(Material.WATER_LILY);
+				block.setData((byte)0x1);
+				}
+				}
+				}
+				}
+			
+			for (x = 0; x < 16; ++x){
+				for (z = 0; z < 16; ++z){
+				if (random.nextInt(100) < 20){
+				for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR && y > 68; --y);
+				if (chunk.getBlock(x, y, z).getType() == Material.GRASS && (chunk.getBlock(x+1,y, z).getType() == Material.WATER)){
+				block = chunk.getBlock(x, y+1, z);
+				block.setType(Material.SUGAR_CANE_BLOCK);
+				block.setData((byte)0x1);
+				}
+				}
+				}
+				} 
 	}
 
 }

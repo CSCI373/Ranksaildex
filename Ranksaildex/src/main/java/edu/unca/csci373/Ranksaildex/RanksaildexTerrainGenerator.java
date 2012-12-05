@@ -22,9 +22,10 @@ public class RanksaildexTerrainGenerator extends ChunkGenerator {
 
 	public List<BlockPopulator> getDefaultPopulators(World world) {
 		ArrayList<BlockPopulator> populators = new ArrayList<BlockPopulator>();
-		//populators.add(new RanksaildexGrassPopulator());
-		//populators.add(new RanksaildexTreePopulator());
-		//populators.add(new RanksaildexWaterPopulator());
+		populators.add(new RanksaildexWaterPopulator());
+		populators.add(new RanksaildexGrassPopulator());
+		populators.add(new RanksaildexTreePopulator());
+		
 
 		return populators;
 	}
@@ -65,7 +66,10 @@ public class RanksaildexTerrainGenerator extends ChunkGenerator {
 
 				for (y = 1; y < 64 + noise; ++y) {
 					blocks[this.coordsToInt(x, y, z)] = (byte) Material.DIRT.getId();
+					
 				}
+				//blocks[this.coordsToInt(x, 68, z)] = (byte) Material.GRAVEL.getId();
+				blocks[this.coordsToInt(x, y, z)] = (byte) Material.GRASS.getId();
 
 				for (y = 1; y < 67; ++y) {
 					if (y == 1) {
@@ -100,7 +104,6 @@ public class RanksaildexTerrainGenerator extends ChunkGenerator {
 							int block = (random.nextInt(100) <= 35) ? Material.REDSTONE_ORE.getId() : Material.DIRT.getId();
 							blocks[this.coordsToInt(x, y, z)] = (byte) block;
 						}
-
 					} else if (y == 10 || y == 11) {
 						blocks[this.coordsToInt(x, y, z)] = (byte) Material.DIRT.getId();
 					} else if (y == 12 || y == 13) {
@@ -221,18 +224,20 @@ public class RanksaildexTerrainGenerator extends ChunkGenerator {
 						}
 					} else if (y == 63) {
 						blocks[this.coordsToInt(x, y, z)] = (byte) Material.GRAVEL.getId();
-					} else if (y == 63 || y == 64) {
+					} else if (y == 64) {
 						blocks[this.coordsToInt(x, y, z)] = (byte) Material.DIRT.getId();
 					} else if (y == 65) {
-						blocks[this.coordsToInt(x, y, z)] = (byte) Material.SAND.getId();
-					} else if (66 == y || y == 67) {
+						blocks[this.coordsToInt(x, y, z)] = (byte) Material.GRAVEL.getId();
+					} else if (66 == y) {
 						blocks[this.coordsToInt(x, y, z)] = (byte) Material.DIRT.getId();
+					} else if (67 == y) {
+						blocks[this.coordsToInt(x, y, z)] = (byte) Material.GRAVEL.getId();
 					}
 				}
-				blocks[this.coordsToInt(x, y, z)] = (byte) Material.GRASS.getId();
+				}
 			}
-
-		}
+		
 		return blocks;
 	}
 }
+

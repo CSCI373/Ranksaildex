@@ -46,7 +46,7 @@ public class RanksaildexGrassPopulator extends BlockPopulator {
 			
 			for (x = 0; x < 16; ++x){
 				for (z = 0; z < 16; ++z){
-			if (random.nextInt(100) < 01){
+			if (random.nextInt(500) < 01){
 				for (y = 255; chunk.getBlock(x, y, z).getType() == Material.AIR && y > 68; --y);
 				if (chunk.getBlock(x, y, z).getType() != Material.WATER && chunk.getBlock(x, y, z).getType() != Material.LONG_GRASS && chunk.getBlock(x, y, z).getType() != Material.LEAVES){
 				//randomize coords

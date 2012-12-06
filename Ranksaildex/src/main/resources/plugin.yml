@@ -7,14 +7,18 @@ version: ${project.version}
 author: SampleAuthor
 description: ${project.description}
 commands:
-  sample:
-    description: set the sample message
-    usage: /<command> message
-    permission: sample.message
+  siege:
+    description: all commands start with siege
+    usage: siege /<command> arguments
+    permission: siege.*
 permissions:
-  sample.*:
-    description: gives all permissions of the SamplePlugin
-    default: op
+  siege.*:
+    description: gives all permissions of the siege plugin
+    default: true
     children:
-      sample.message:
-        description: gives permission to set the sample message using the sample command
+      siege.message:
+        description: gives permission to set the siege message using the siege command
+      siege.on:
+        description: activates the zombie siege
+      siege.off:
+        description: deactivates the zombie siege

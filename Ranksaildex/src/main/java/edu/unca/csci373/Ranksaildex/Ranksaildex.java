@@ -31,10 +31,10 @@ public final class Ranksaildex extends JavaPlugin {
         // save the configuration file
         saveDefaultConfig();
         
-        // Create the SampleListener
+        // Create the Listener
         new RanksaildexListener(this);
         
-        // set the command executor for sample
+        // set the command executor for siege
         this.getCommand("siege").setExecutor(new RanksaildexCommandExecutor(this));
         
     }
@@ -52,9 +52,12 @@ public final class Ranksaildex extends JavaPlugin {
     	logger.info("plugin disabled");
     }
     
+    //recognizes the terrain generator and implements it
     public ChunkGenerator getDefaultWorldGenerator (String worldName, String uid) {
 		return new RanksaildexTerrainGenerator(this);
 	}
+    
+    //sets the meta data for the player
     public void setMetadata(Player player, String key, Object value,
 			Ranksaildex plugin) {
 		player.setMetadata(key, new FixedMetadataValue(plugin, value));

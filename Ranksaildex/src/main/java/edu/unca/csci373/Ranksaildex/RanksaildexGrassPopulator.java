@@ -15,6 +15,9 @@ public class RanksaildexGrassPopulator extends BlockPopulator {
 		int x, y, z;
 		Block block;
 		
+		
+		//this is the code to spawn grass
+		//this will spawn only on top level grass blcoks past 68 blocks high
 		for (x = 0; x < 16; ++x){
 			for (z = 0; z < 16; ++z){
 			if (random.nextInt(100) < 25){
@@ -28,6 +31,9 @@ public class RanksaildexGrassPopulator extends BlockPopulator {
 			}
 			}
 			}
+		
+		//this is the code to spawn red flowers
+		//these will spawn on top layer grass only
 			for (x = 0; x < 16; ++x){
 			for (z = 0; z < 16; ++z){
 			if (random.nextInt(100) < 01){
@@ -43,7 +49,8 @@ public class RanksaildexGrassPopulator extends BlockPopulator {
 			}
 			
 			
-			
+			//this is the code to spawn yellow flowers
+			//these will spawn on the top layer of grass only
 			for (x = 0; x < 16; ++x){
 				for (z = 0; z < 16; ++z){
 			if (random.nextInt(500) < 01){
@@ -57,7 +64,8 @@ public class RanksaildexGrassPopulator extends BlockPopulator {
 			}
 			}
 		}
-			
+			//this spawns the random chance for the water lillies to be generated
+			//only generates them on the top of the water blocks
 			for (x = 0; x < 16; ++x){
 				for (z = 0; z < 16; ++z){
 				if (random.nextInt(100) < 01){
@@ -72,6 +80,10 @@ public class RanksaildexGrassPopulator extends BlockPopulator {
 				}
 				}
 			
+			
+			//this is the code to generate the sugar cane blocks
+			//these only generate next to water blocks
+			//occasionally one will spawn randomly but will most likely die
 			for (x = 0; x < 16; ++x){
 				for (z = 0; z < 16; ++z){
 				if (random.nextInt(100) < 20){

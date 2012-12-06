@@ -14,6 +14,9 @@ public class RanksaildexWaterPopulator extends BlockPopulator {
 		int x, y, z;
 		Block block;
 
+		
+		//this is the basic code to spawn water
+		//it fills water in from blocks 66-67
 		for (y=66; y<68; ++y){
 			for(x=0;x<16; ++x){
 				for (z=0; z<16;++z){

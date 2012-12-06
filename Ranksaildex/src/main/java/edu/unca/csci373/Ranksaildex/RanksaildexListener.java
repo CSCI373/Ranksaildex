@@ -41,12 +41,17 @@ public class RanksaildexListener implements Listener {
      * Send the sample message to all players that join
      */
 
+    //this reads for the player name who types in anything for seige
    	public void onPlayerJoin(PlayerJoinEvent event) {
 		plugin.setMetadata(event.getPlayer(), "on", false, plugin);
 		event.getPlayer().sendMessage(this.plugin.getConfig().getString("siege.message"));
 
 	}
     
+   	
+   	//this is the block for the "Zelda" drops
+   	//a "rupee" (emerald) will drop randomly when grass is destroyed
+   	//there is also the chance for wheat to be dropped when grass is destroyed
     @EventHandler(priority = EventPriority.NORMAL)
     public void ZeldaDrops(BlockDamageEvent event) {
         if(event.getBlock().getType() == Material.LONG_GRASS){
@@ -62,6 +67,9 @@ public class RanksaildexListener implements Listener {
         }
     }
     
+    
+    //this is a cute easter egg that will have the chance of dropping an apple or a bat
+    //whenever a block of leaves are destroyed
     @EventHandler(priority = EventPriority.NORMAL)
     public void LeafDrops(BlockDamageEvent event) {
         if(event.getBlock().getType() == Material.LEAVES){
@@ -76,12 +84,13 @@ public class RanksaildexListener implements Listener {
         }
     }
     
-    /*
-     * Another example of a event handler. This one will give you the name of
-     * the entity you interact with, if it is a Creature it will give you the
-     * creature Id.
-     */
 
+    
+    //this is the large, large portion of our file that is the de-crafting table
+    //this runs through as a series of case statements, checking for durability, item type
+    //the number of items in hand and then air when out of items
+    //this will either return some of the materials from the item or will return nothing
+    //if the item is too damaged
     @EventHandler(priority = EventPriority.HIGH)
     public void decraft(BlockDamageEvent event) {
    
@@ -336,9 +345,9 @@ public class RanksaildexListener implements Listener {
     
    
 
-	//This will give the player a 'blessing' if 'bless' is typed and then a block is clicked
-	//Items, food and a flower will appear, as will the ability to fly
-    
+	//This will give the player aid if 'seige on' is typed and then a yellow flower is destroyed
+	//Players will be given armor
+    //
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void demoEvent(PlayerInteractEvent event) {
 	try {
@@ -348,7 +357,7 @@ public class RanksaildexListener implements Listener {
 		
 			
 					}
-		
+		//these will spawn the items for the drops
 					Location loc = event.getPlayer().getLocation();
 				    loc.getWorld().dropItem(loc, new ItemStack(Material.IRON_SWORD, 1));
 					loc.getWorld().dropItem(loc, new ItemStack(Material.LEATHER_BOOTS, 1));

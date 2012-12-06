@@ -15,6 +15,10 @@ public class RanksaildexTreePopulator extends BlockPopulator {
 	public void populate(World world, Random random, Chunk chunk) {
 		int x, y, z;
 		
+		
+		//this is the code to randomly spawn trees
+		//there are four possible tree types to be spawned
+		//these spawn from level 69 and up
 		for (x = 0; x < 16; ++x){
 			for (z = 0; z < 16; ++z){
 				if (random.nextInt(100) < 5){

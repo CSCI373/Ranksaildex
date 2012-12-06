@@ -22,7 +22,8 @@ public class RanksaildexCommandExecutor implements CommandExecutor {
     }
 
     /*
-     * On command set the sample message
+     * these are all the messages for siege and the codes for it. 
+     * these will add the commands for players to use to turn on/off siege
      */
   
 	public boolean onCommand(CommandSender sender, Command command,
